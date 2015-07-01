@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>gom</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<form action="/board/writeController" method="post">
+			<div class="form-group">
+				<div class="input-group">
+					<span class="input-group-addon">제목</span> <input type="text"
+						class="form-control" name="title">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon">작성자</span> <input type="text"
+						class="form-control" name="writer">
+				</div>
+				<div class="input-group">
+					<textarea type="textarea" class="form-control" rows="5" cols="100" name="article"></textarea>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-default">작성</button>
+			<a href="/angularBoard/board.html" class="btn btn-default">취소</a>
+		</form>
+	</div>
+</body>
+</html>
