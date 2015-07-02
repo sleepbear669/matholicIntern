@@ -19,6 +19,7 @@ public class Board {
 	private String title;
 	private String writer;
 	private String article;
+	private String img;
 
 	public Board(){}
 	
@@ -48,11 +49,6 @@ public class Board {
 		return article;
 	}
 
-
-	public String toString(){
-		return id + " " + title +" " + writer +" " + article;
-	}
-
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -67,6 +63,14 @@ public class Board {
 
 	public void setArticle(String article) {
 		this.article = article;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	

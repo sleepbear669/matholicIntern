@@ -6,30 +6,34 @@
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script
+	src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+<link rel="stylesheet" href="css/boardpage.css">
 </head>
 <body ng-controller="boardPageController">
-	<div>hello world</div>
-<div class="panel panel-default">
-  <div class="panel-body">
-    title
-  </div>
-  <div class="panel-footer"> {{boardPage.title}}</div>
-</div>
-<div class="panel panel-default">
-  <div class="panel-body">
-     writer
-  </div>
-  <div class="panel-footer">{{boardPage.writer}}</div>
-</div>
-<div class="panel panel-default">
-  <div class="panel-body">
-     article
-  </div>
-  <div class="panel-footer">{{boardPage.article}}</div>
-</div>
-<a href="/angularBoard/board.html" class="btn btn-default">게시판</a>
-<a href="/angularBoard/modify.html?id={{boardPage.id}}" class="btn btn-default">수정</a>
-<a href="/board/delete/{{boardPage.id}}" class="btn btn-default">삭제</a>
+	<article class="container" id="boardpage">
+
+		<section class="row">
+			<div class="col-md-7 img">
+				<img class="img-responsive content-img img-rounded"
+					src="/resources/file/{{boardPage.img}}" alt="none image"
+					style="width: 300px; height: 300px;">
+			</div>
+			<div class="col-md-5 info">
+				<h3>{{boardPage.title}}</h3>
+				<h4>{{boardPage.writer}}</h4>
+			</div>
+			<div class="col-md-5 article">{{boardPage.article}}</div>
+			<div class="col-md-5 btn-group ">
+				<a href="/angularBoard/modify.html?id={{boardPage.id}}"
+					class="btn btn-default">수정</a> <a
+					href="/board/delete/{{boardPage.id}}" class="btn btn-default">삭제</a>
+			</div>
+		</section>
+		<div id="board_list">
+			<a href="/angularBoard/board.html" class="btn btn-default">글목록</a>
+		</div>
+	</article>
 	<script type="text/javascript" src="js/boardApp.js"></script>
 	<script type="text/javascript"
 		src="js/controller/boardPageController.js"></script>

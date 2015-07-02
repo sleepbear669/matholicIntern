@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html ng-app="boardApp">
 <head>
-	<title></title>
-	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
-	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<title></title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/board.css">
+<script
+	src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+
 </head>
 <body ng-controller="boardController">
-<div>hello world</div>
-<div >
-	<table class="table">
-		<tr>
-			<td>id</td>
-			<td>title</td>
-			<td>writer</td>
-		</tr>
-		<tr ng-repeat="board in boardList">
-			<td>{{board.id}}</td>
-			<td><a ng-href='boardPage.html?id={{board.id}}'>{{board.title}}</a></td>
-			<td>{{board.writer}}</td>
-		</tr>
-	</table>
-</div>
-<a class="btn btn-default" ng-href="/angularBoard/write.html">글쓰기</a>
+	<div class="container" id="board">
+		<table class="table">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>TITLE</td>
+					<td>WRITER</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="board in boardList">
+					<td>{{board.id}}</td>
+					<td><a popover-template="dynamicPopover.templateUrl"
+						popover-trigger="mouseenter"  popover-placement="right" href="boardPage.html?id={{board.id}}">{{board.title}}</a></td>
+					<td>{{board.writer}}</td>
+				</tr>
+			</tbody>
+		</table>
 
-<script type="text/javascript" src="js/boardApp.js"></script>
-<script type="text/javascript" src="js/controller/boardController.js"></script>
+		<div id="write_btn">
+			<a class="btn btn-default write" ng-href="/angularBoard/write.html">글쓰기</a>
+		</div>
+	</div>
+	<script type="text/ng-template" id="imgPopoverTemplate.html">
+		<img src="/resources/file/{{board.img}}">
+    </script>
+	<script type="text/javascript" src="js/boardApp.js"></script>
+	<script type="text/javascript" src="js/controller/boardController.js"></script>
 </body>
 </html>

@@ -8,10 +8,12 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
 </head>
-<body ng-controller="modifyController">
+<script
+	src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
+<body ng-controller="boardPageController">
 	<div class="container">
-		<form action="/board/writeController" method="post">
-		<input type="hidden" name="id" value="{{boardPage.id}}">
+		<form action="/board/modifyController" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="id" value="{{boardPage.id}}">
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon">제목</span> <input type="text"
@@ -25,12 +27,16 @@
 					<textarea type="textarea" class="form-control" rows="5" cols="100"
 						name="article">{{boardPage.article}}</textarea>
 				</div>
+				<div class="input-group">
+					<input type="file" class="form-control" name="upload">
+				</div>
 			</div>
-			<button type="submit" class="btn btn-default">작성</button>
+			<button type="submit" class="btn btn-default">수정</button>
 			<a href="/angularBoard/board.html" class="btn btn-default">취소</a>
 		</form>
 	</div>
 	<script type="text/javascript" src="js/boardApp.js"></script>
-	<script type="text/javascript" src="js/controller/boardModifyController.js"></script>
+	<script type="text/javascript"
+		src="js/controller/boardPageController.js"></script>
 </body>
 </html>

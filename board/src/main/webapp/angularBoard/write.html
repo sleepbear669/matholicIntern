@@ -5,10 +5,12 @@
 <title>gom</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script
+	src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.0.js"></script>
 </head>
 <body>
 	<div class="container">
-		<form action="/board/writeController" method="post">
+		<form action="/board/writeController" method="post" enctype="multipart/form-data">
 			<div class="form-group">
 				<div class="input-group">
 					<span class="input-group-addon">제목</span> <input type="text"
@@ -20,6 +22,9 @@
 				</div>
 				<div class="input-group">
 					<textarea type="textarea" class="form-control" rows="5" cols="100" name="article"></textarea>
+				</div>
+				<div class="input-group">
+					<input type="file" class="form-control" name="upload">
 				</div>
 			</div>
 			<button type="submit" class="btn btn-default">작성</button>

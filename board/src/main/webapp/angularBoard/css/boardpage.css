@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+body{
+	background-color:#eee;
+}
+
+article.container {
+	margin-top : 50px;
+	width : 550px;
+}
+
+.btn-group{
+	margin-top : 130px;
+}
+
+div.article{
+	margin-top: 20px;
+}
+
+div#board_list{
+	margin-top: 5px;
+}

@@ -1,2 +1,2 @@
-var boardApp = angular.module("boardApp", []);
+var boardApp = angular.module("boardApp", ['ui.bootstrap']);
 

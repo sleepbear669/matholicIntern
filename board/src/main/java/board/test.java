@@ -34,7 +34,7 @@ public class test implements CommandLineRunner{
 	public void run(String... strings) throws Exception {
 //		Board board1 = new Board("title", "gom", "123");
 //		Board board2 = new Board("title2", "gom1", "1234");
-//		writeController.write(board1);
+//		writeController.write(board, upload)(board1);
 //		writeController.write(board2);
 //		
 //		List<Board> list = boardController.boardPage();
